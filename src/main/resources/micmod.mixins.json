@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.micmod.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "client": [
+    "LivingEntityMixin",
+    "LivingEntityAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
