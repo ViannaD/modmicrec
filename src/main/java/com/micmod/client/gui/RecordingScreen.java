@@ -193,11 +193,10 @@ public class RecordingScreen extends Screen {
             context.drawBorder(listX, y, listW, rowH, COLOR_PANEL_BORDER);
             context.drawText(this.textRenderer, Text.literal(CATEGORY_LABELS[i]), listX + 8, y + (rowH - 8) / 2, 0xFFFFFF, false);
 
-            boolean recorded = RecordingStorage.exists(entity.getUuid(), cat);
             int dotSize = 6;
             int dotX = listX + listW - dotSize - 6;
             int dotY = y + (rowH - dotSize) / 2;
-            context.fill(dotX, dotY, dotX + dotSize, dotY + dotSize, recorded ? COLOR_DOT_RECORDED : COLOR_DOT_EMPTY);
+            context.fill(dotX, dotY, dotX + dotSize, dotY + dotSize, selected ? COLOR_DOT_RECORDED : COLOR_DOT_EMPTY);
         }
     }
 
@@ -208,8 +207,8 @@ public class RecordingScreen extends Screen {
         context.drawBorder(previewX, previewY, previewW, previewH, COLOR_PANEL_BORDER);
 
         int entX = previewX + previewW / 2;
-        int entY = previewY + previewH - 6;
-        int scale = (int) (previewH * 0.85);
+        int entY = previewY + previewH - 10;
+        int scale = (int) (previewH * 0.45);
         InventoryScreen.drawEntity(context, entX, entY, scale,
                 (float) (entX - mouseX), (float) (entX - 50 - mouseY), entity);
 
