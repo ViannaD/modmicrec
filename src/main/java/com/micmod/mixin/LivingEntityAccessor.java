@@ -6,15 +6,12 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Invoker;
 
 /**
- * Expõe os métodos protected getAmbientSound()/getDeathSound() de LivingEntity
- * como públicos, para que EntitySoundOverride possa compará-los sem precisar
- * de reflection.
+ * Expõe o método protected getDeathSound() de LivingEntity como público.
+ * getDeathSound() é declarado na própria LivingEntity (ao contrário de
+ * getAmbientSound(), que só existe em MobEntity — ver MobEntityAccessor).
  */
 @Mixin(LivingEntity.class)
 public interface LivingEntityAccessor {
-
-    @Invoker("getAmbientSound")
-    SoundEvent micmod$getAmbientSound();
 
     @Invoker("getDeathSound")
     SoundEvent micmod$getDeathSound();

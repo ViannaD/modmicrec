@@ -5,7 +5,8 @@
   "compatibilityLevel": "JAVA_17",
   "client": [
     "LivingEntityMixin",
-    "LivingEntityAccessor"
+    "LivingEntityAccessor",
+    "MobEntityAccessor"
   ],
   "injectors": {
     "defaultRequire": 1
